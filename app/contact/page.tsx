@@ -3,7 +3,7 @@ import Footer from "../components/Footer/Footer";
 export default function Contact() {
   return (
     <>
-      <div className="w-full h-screen flex justify-center items-center text-white">
+      <div className="w-full mt-28 flex justify-center items-center text-white">
         <form
           method="POST"
           action="https://formsubmit.co/neelamkhanwork@gmail.com"
