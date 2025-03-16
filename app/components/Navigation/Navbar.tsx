@@ -27,9 +27,9 @@ export default function Navbar() {
   };
 
   return (
-    <div className="relative text-white">
+    <div className="fixed top-0 left-0 w-full z-50 text-white shadow-2xl">
       {/* Desktop */}
-      <nav className="sticky top-0 hidden md:flex space-x-2 justify-end items-center w-fulle py-8 pr-20 lg:pr-32 xl:pr-80 bg-slate-950">
+      <nav className="hidden md:flex space-x-2 justify-end items-center py-6 pr-20 lg:pr-32 xl:pr-80 bg-slate-950/90 backdrop-blur-lg pointer-events-auto rounded-b-lg shadow-md">
         <Link href="/" className={linkClasses("/")}>
           Home
         </Link>
@@ -42,7 +42,7 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile */}
-      <div className="sticky top-0 left-0 md:hidden">
+      <div className="md:hidden w-full bg-slate-950/90 backdrop-blur-lg pointer-events-auto relative">
         <button
           onClick={toggleNav}
           className="cursor-pointer p-3 rounded-lg m-4 bg-slate-900 hover:shadow-2xl"
@@ -54,7 +54,7 @@ export default function Navbar() {
           />
         </button>
         <div
-          className={`absolute w-full bg-slate-950 transition-all duration-300 overflow-hidden ${
+          className={`fixed top-20 left-0 w-full bg-slate-950 transition-all duration-300 backdrop-blur-lg shadow-lg overflow-hidden z-50 ${
             showNav ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
