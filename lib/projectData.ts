@@ -1,5 +1,4 @@
 import { ProjectTemplate } from "@/types";
-import test from "../app/images/test.png";
 
 import budgetA from "../app/images/budgetPlanner/imageA.png";
 import budgetB from "../app/images/budgetPlanner/imageB.png";
@@ -10,7 +9,7 @@ import budgetF from "../app/images/budgetPlanner/imageF.png";
 import budgetG from "../app/images/budgetPlanner/imageG.png";
 
 import recipeA from "../app/images/recipeBlog/imageA.png";
-import recipeB from "../app/images/recipeBlog/imageB.png";
+// import recipeB from "../app/images/recipeBlog/imageB.png";
 import recipeC from "../app/images/recipeBlog/imageC.png";
 import recipeD from "../app/images/recipeBlog/imageD.png";
 import recipeE from "../app/images/recipeBlog/imageE.png";
@@ -25,7 +24,7 @@ import cozyC from "../app/images/cozy/imageC.png";
 import cozyD from "../app/images/cozy/imageD.png";
 import cozyE from "../app/images/cozy/imageE.png";
 
-import weatherA from "../app/images/weather/imageA.png";
+// import weatherA from "../app/images/weather/imageA.png";
 import weatherB from "../app/images/weather/imageB.png";
 import weatherC from "../app/images/weather/imageC.png";
 
