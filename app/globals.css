@@ -68,6 +68,11 @@ body {
   color: white;
 }
 
+.next {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
 @keyframes slide-up-anim {
   0% {
     transform: translateY(5px);

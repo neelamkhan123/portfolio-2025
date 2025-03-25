@@ -30,6 +30,9 @@ export default function Showcase() {
           <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2 react text-xs sm:text-sm md:text-lg w-fit">
             React
           </div>
+          <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2 next text-xs sm:text-sm md:text-lg w-fit">
+            Next.js
+          </div>
           <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2 vue text-xs sm:text-sm md:text-lg w-fit">
             Vue
           </div>

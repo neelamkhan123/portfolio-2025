@@ -35,6 +35,9 @@ export default function Skills() {
         <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2  react text-lg w-fit">
           React
         </div>
+        <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2  next text-lg w-fit">
+          Next.js
+        </div>
         <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2  vue text-lg w-fit">
           Vue
         </div>
