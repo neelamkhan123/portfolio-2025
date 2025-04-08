@@ -29,9 +29,10 @@ export default function WorkHistory() {
             <span className="text-[11px]">April 2024 - Present</span>
             <ul className="flex flex-col space-y-2 mt-8 mb-5 ml-4 text-xs md:text-sm list-disc">
               <li>
-                Creating, maintaining, and enhancing website functionality and
-                visual appeal through well-organized, clear, and scalable source
-                code.
+                Build and optimize website functionality and UI/UX using clean,
+                scalable code with HTML, CSS, TailwindCSS, JavaScript, and
+                TypeScript across modern frameworks including React, Vue.js, and
+                Nuxt.js.
               </li>
               <li>
                 Implementing responsive web design principles to ensure the
@@ -64,6 +65,12 @@ export default function WorkHistory() {
               </li>
               <li className="rounded-full shadow-sm px-2 py-1 javascript">
                 JavaScript
+              </li>
+              <li className="rounded-full shadow-sm px-2 py-1 typescript">
+                TypeScript
+              </li>
+              <li className="rounded-full shadow-sm px-2 py-1 react">
+                ReactJS
               </li>
               <li className="rounded-full shadow-sm px-2 py-1 vue">VueJS</li>
               <li className="rounded-full shadow-sm px-2 py-1 nuxt">NuxtJS</li>
