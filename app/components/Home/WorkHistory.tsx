@@ -52,9 +52,9 @@ export default function WorkHistory() {
                 planning and teamwork.
               </li>
               <li>
-                Expanding skills in backend technologies (PHP, Laravel) and
-                database management (mySQL), working as a full-stack developer
-                to aid my front end tasks.
+                Implementing backend functionality using PHP and Laravel, with
+                MySQL database management, to support and streamline front-end
+                development tasks.
               </li>
             </ul>
             <ul className="flex gap-2 flex-wrap text-xs">
