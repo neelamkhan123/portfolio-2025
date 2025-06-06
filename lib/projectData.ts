@@ -1,5 +1,11 @@
 import { ProjectTemplate } from "@/types";
 
+import newsA from "../app/images/news/imageA.png";
+import newsB from "../app/images/news/imageB.png";
+import newsC from "../app/images/news/imageC.png";
+import newsD from "../app/images/news/imageD.png";
+import newsE from "../app/images/news/imageE.png";
+
 import budgetA from "../app/images/budgetPlanner/imageA.png";
 import budgetB from "../app/images/budgetPlanner/imageB.png";
 import budgetC from "../app/images/budgetPlanner/imageC.png";
@@ -45,23 +51,19 @@ import calculatorA from "../app/images/calculator/imageA.png";
 
 export const projectData: ProjectTemplate[] = [
   {
-    title: "Monthly Budget Planner",
+    title: "The Continental Post",
     languages: [
       {
-        language: "Laravel",
-        className: "laravel",
+        language: "TypeScript",
+        className: "typescript",
       },
       {
-        language: "mySQL",
-        className: "mysql",
+        language: "React",
+        className: "react",
       },
       {
-        language: "JavaScript",
-        className: "javascript",
-      },
-      {
-        language: "CSS",
-        className: "css",
+        language: "TailwindCSS",
+        className: "tailwind",
       },
       {
         language: "HTML",
@@ -70,23 +72,23 @@ export const projectData: ProjectTemplate[] = [
     ],
     links: [
       {
-        gitHub: "https://github.com/neelamkhan123/budget-planner",
+        gitHub: "https://github.com/neelamkhan123/the-continental-post",
+        website: "https://the-continental-post-neelam.netlify.app/",
       },
     ],
     description: [
-      "Uses Laravel Authentication to sign up, login, and logout",
-      "State management with mySQL",
-      "Track expenses, lesuirely purchases, and adding/tracking savings",
-      "Edit, delete, and track dynamic data",
+      "Uses Firebase Authentication to sign up, login, and logout",
+      "Uses NewsAPI to get, post and delete news articles",
+      "Search engine to explore specific topics, languages etc.",
+      "Bookmark artcles and view them in your dashbaord",
+      "Delete bookmarks",
     ],
     images: [
-      { src: budgetA, alt: "screenshot" },
-      { src: budgetB, alt: "screenshot" },
-      { src: budgetC, alt: "screenshot" },
-      { src: budgetD, alt: "screenshot" },
-      { src: budgetE, alt: "screenshot" },
-      { src: budgetF, alt: "screenshot" },
-      { src: budgetG, alt: "screenshot" },
+      { src: newsA, alt: "screenshot" },
+      { src: newsB, alt: "screenshot" },
+      { src: newsC, alt: "screenshot" },
+      { src: newsD, alt: "screenshot" },
+      { src: newsE, alt: "screenshot" },
     ],
   },
   {
@@ -134,6 +136,51 @@ export const projectData: ProjectTemplate[] = [
       { src: recipeG, alt: "screenshot" },
       { src: recipeH, alt: "screenshot" },
       { src: recipeI, alt: "screenshot" },
+    ],
+  },
+  {
+    title: "Monthly Budget Planner",
+    languages: [
+      {
+        language: "Laravel",
+        className: "laravel",
+      },
+      {
+        language: "mySQL",
+        className: "mysql",
+      },
+      {
+        language: "JavaScript",
+        className: "javascript",
+      },
+      {
+        language: "CSS",
+        className: "css",
+      },
+      {
+        language: "HTML",
+        className: "html",
+      },
+    ],
+    links: [
+      {
+        gitHub: "https://github.com/neelamkhan123/budget-planner",
+      },
+    ],
+    description: [
+      "Uses Laravel Authentication to sign up, login, and logout",
+      "State management with mySQL",
+      "Track expenses, lesuirely purchases, and adding/tracking savings",
+      "Edit, delete, and track dynamic data",
+    ],
+    images: [
+      { src: budgetA, alt: "screenshot" },
+      { src: budgetB, alt: "screenshot" },
+      { src: budgetC, alt: "screenshot" },
+      { src: budgetD, alt: "screenshot" },
+      { src: budgetE, alt: "screenshot" },
+      { src: budgetF, alt: "screenshot" },
+      { src: budgetG, alt: "screenshot" },
     ],
   },
   {
