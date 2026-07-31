@@ -16,15 +16,13 @@ export default function AboutMe() {
             <h2 className="text-3xl md:text-5xl lg:text-6xl">About me</h2>
           </span>
           <p className="text-sm md:text-base">
-            I&apos;m a passionate Front End Developer with industry experience
-            in building responsive, user-friendly web applications. My journey
-            into coding started as a self-taught endeavor, driven by curiosity
-            and a love for creating seamless digital experiences. Over the
-            years, I&apos;ve honed my skills in HTML, CSS, JavaScript, and
-            TypeScript, with modern frameworks like TailwindCSS, Vue, React, and
-            Next.js, crafting intuitive interfaces that bring ideas to life. I
-            thrive on problem-solving, continuous learning, and transforming
-            complex concepts into elegant, functional designs.
+            Frontend engineer with 2+ years building performant, accessible web
+            products. Skilled in React, TypeScript, JavaScript, Vue, and
+            frontend component libraries, with a track record of shipping
+            features that measurably improve engagement, load time, and
+            conversion. Also builds backend services in Python with Django and
+            FastAPI, enabling end-to-end ownership of features from architecture
+            to pixel-level polish. Thrives in fast-moving, product-driven teams.
           </p>
         </div>
       </div>
