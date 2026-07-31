@@ -73,6 +73,26 @@ body {
   color: white;
 }
 
+.python {
+  background-color: #ffe873;
+  color: white;
+}
+
+.django {
+  background-color: rgb(6, 75, 53);
+  color: white;
+}
+
+.fastapi {
+  background-color: rgb(65, 184, 131);
+  color: white;
+}
+
+.figma {
+  background-color: rgb(255, 114, 98);
+  color: white;
+}
+
 @keyframes slide-up-anim {
   0% {
     transform: translateY(5px);
