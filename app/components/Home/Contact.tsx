@@ -1,9 +1,8 @@
-import Footer from "../components/Footer/Footer";
-
 export default function Contact() {
   return (
     <>
-      <div className="w-full mt-28 flex justify-center items-center text-white">
+      <div className="w-full flex flex-col gap-6 justify-center items-center bg-slate-950 py-10 text-white">
+        <h2 className="text-3xl lg:text-5xl">Contact me</h2>
         <form
           method="POST"
           action="https://formsubmit.co/neelamkhanwork@gmail.com"
@@ -62,7 +61,6 @@ export default function Contact() {
           </button>
         </form>
       </div>
-      <Footer />
     </>
   );
 }

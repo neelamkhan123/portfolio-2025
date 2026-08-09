@@ -8,9 +8,5 @@ export type ProjectTemplate = {
     gitHub: string;
     website?: string;
   }[];
-  description: string[];
-  images: {
-    src: StaticImageData;
-    alt: string;
-  }[];
+  description: string;
 };
