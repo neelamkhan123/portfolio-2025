@@ -9,7 +9,7 @@ export default function Showcase() {
           Neelam Khan
         </h1>
         <h3 className="text-xl sm:text-3xl text-center lg:text-left mb-4">
-          front end developer
+          frontend developer
         </h3>
         <div className="flex justify-center lg:justify-start gap-2 lg:gap-4 flex-wrap w-5/6 lg:w-full">
           <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2 html text-xs sm:text-sm md:text-lg w-fit">
@@ -30,14 +30,14 @@ export default function Showcase() {
           <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2 react text-xs sm:text-sm md:text-lg w-fit">
             React
           </div>
-          <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2 next text-xs sm:text-sm md:text-lg w-fit">
-            Next.js
-          </div>
           <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2 vue text-xs sm:text-sm md:text-lg w-fit">
             Vue
           </div>
-          <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2 mysql text-xs sm:text-sm md:text-lg w-fit">
-            mySQL
+          <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2 python text-xs sm:text-sm md:text-lg w-fit">
+            Python
+          </div>
+          <div className="rounded-full shadow-lg px-3 py-1 md:px-4 md:py-2 django text-xs sm:text-sm md:text-lg w-fit">
+            Django
           </div>
         </div>
       </div>
