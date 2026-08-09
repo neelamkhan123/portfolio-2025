@@ -3,8 +3,8 @@ import showcase from "../../images/showcase.png";
 
 export default function Showcase() {
   return (
-    <div className="h-screen flex flex-col-reverse lg:flex-row justify-center items-center space-x-0 lg:space-x-10 2xl:space-x-28 lg:px-10">
-      <div className="flex flex-col items-center lg:items-start justify-center slide-up  text-white px-2">
+    <div className="h-screen bg-slate-950 flex flex-col-reverse lg:flex-row justify-center items-center space-x-0 lg:space-x-10 2xl:space-x-28 lg:px-10">
+      <div className="bg-slate-950 flex flex-col items-center lg:items-start justify-center slide-up text-white px-2">
         <h1 className="text-5xl sm:text-7xl xl:text-8xl 2xl:text-9xl mb-2 text-center lg:text-left">
           Neelam Khan
         </h1>
