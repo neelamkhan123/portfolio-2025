@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="h-40 text-white flex flex-col justify-center items-center">
+    <div className="h-40 bg-slate-800 w-full text-white flex flex-col justify-center items-center">
       <h6 className="mb-4">Coded with ❤️ by Neelam</h6>
       <div className="flex justify-center items-center space-x-4">
         <Link

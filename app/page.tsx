@@ -8,13 +8,13 @@ import Contact from "./components/Home/Contact";
 
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col items-center justify-center gap-8">
       <Showcase />
       <AboutMe />
       <WorkHistory />
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }
