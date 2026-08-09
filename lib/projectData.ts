@@ -99,11 +99,38 @@ Full-stack development, REST API design, OAuth/JWT authentication flows, relatio
         website: "https://the-continental-post-neelam.netlify.app/",
       },
     ],
-    description: `- Uses Firebase Authentication to sign up, login, and logout
-- Uses NewsAPI to get, post and delete news articles
-- Search engine to explore specific topics, languages etc.
-- Bookmark artcles and view them in your dashbaord
-- Delete bookmarks`,
+    description: `A full-stack news aggregation and bookmarking platform built with React Router 7 in framework mode, combining SSR-capable routing with a serverless API layer for authenticated news browsing and personal article curation.
+
+### Key Features
+- **Firebase Authentication** — sign up, login, and logout flow gating bookmarking and dashboard features.
+- **NewsAPI integration via serverless functions** — fetch, post, and delete news articles through Netlify Functions, keeping API keys off the client.
+- **Topic/language search & discovery** — a search engine to explore specific topics, languages, etc., plus a dedicated Discover page.
+- **Personal bookmarking + dashboard** — bookmark articles and view/manage them in a user dashboard, with delete support.
+- **Responsive UI** built with TailwindCSS across mobile and desktop.
+- **Containerized deployment option** via a production Dockerfile.
+
+### Tech Stack
+
+**Frontend**
+- React Router 7 (framework mode) + TypeScript, built with Vite
+- TailwindCSS for styling
+- Firebase SDK for authentication
+
+**Backend / Services**
+- Netlify serverless Functions acting as a lightweight API proxy/backend for NewsAPI requests
+- NewsAPI as the external news data source
+- Firebase Authentication for identity/session management
+
+**Testing**
+- Jest (with Babel transform) test suite (\`jest.config.mjs\`, \`jest.setup.ts\`) for component/logic coverage
+
+**Tooling / DevOps**
+- Dockerfile + .dockerignore for containerized deployment (AWS ECS, Cloud Run, Fly.io, etc.)
+- Deployed on Netlify, leveraging integrated Functions for the API layer
+- TypeScript-first configuration throughout the app
+
+### Skills Demonstrated
+Serverless backend architecture, third-party REST API integration (NewsAPI), Firebase authentication flows, responsive UI engineering with React Router 7 + Tailwind, containerization, and automated testing with Jest.`,
   },
   {
     title: "Recipe Blog",
@@ -131,13 +158,35 @@ Full-stack development, REST API design, OAuth/JWT authentication flows, relatio
         website: "https://recipe-blog-neelam-khan.netlify.app/",
       },
     ],
-    description: `- Uses Firebase Authentication to sign up, login, and logout
-- Spoonacular API
-- State management with localStorage
-- Search recipes using both search bars
-- Discover recipes on explore page
-- View whole recipes including: name, ingredients, steps, and nutrition data
-- Add and delete recipes of your own
-- Bookmark recipes`,
+    description: `A recipe discovery and management blog that lets users search, explore, save, and author their own recipes, combining a public recipe API with Firebase-backed accounts and local persistence for a fast, personalized browsing experience.
+
+### Key Features
+- **Firebase Authentication** — sign up, login, and logout to unlock personalized features.
+- **Spoonacular API integration** — search and retrieve recipe data (ingredients, steps, nutrition) from a large external recipe database.
+- **Dual search experience** — two independent search bars for finding recipes by different criteria.
+- **Explore page** — curated recipe discovery outside of direct search.
+- **Full recipe detail view** — name, ingredients, steps, and nutrition data per recipe.
+- **User-authored recipes** — add and delete your own recipes alongside API-sourced ones.
+- **Bookmarking** — save favorite recipes for quick access later.
+- **State persistence via \`localStorage\`** — keeps bookmarks and preferences across sessions without a dedicated backend.
+
+### Tech Stack
+
+**Frontend**
+- React + TypeScript (~70% of codebase), built with Vite
+- CSS-based styling system (~28% of codebase) for custom, responsive layouts
+- HTML for semantic page structure
+
+**Backend / Services**
+- Spoonacular API as the external recipe data source
+- Firebase Authentication for user accounts and session handling
+- Browser \`localStorage\` for lightweight client-side state persistence (no dedicated app backend)
+
+**Tooling / DevOps**
+- Vite build tooling with a TypeScript project configuration
+- Static production build (\`dist/\`) deployed via Netlify
+
+### Skills Demonstrated
+Frontend-focused CRUD-style UX (recipes + bookmarks), third-party REST API integration, Firebase authentication, client-side state persistence, and responsive UI/UX design with TypeScript.`,
   },
 ];

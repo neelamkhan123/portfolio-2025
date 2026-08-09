@@ -11,6 +11,18 @@ export default function Projects() {
           <Project key={project.title} {...project} />
         ))}
       </div>
+
+      <span className="text-xs text-center">
+        + other small projects on my{" "}
+        <a
+          href="https://github.com/neelamkhan123"
+          target="_blank"
+          className="underline hover:no-underline"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </span>
     </div>
   );
 }
