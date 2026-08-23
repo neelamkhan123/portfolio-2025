@@ -2,6 +2,63 @@ import { ProjectTemplate } from "@/types";
 
 export const projectData: ProjectTemplate[] = [
   {
+    title: "Accessible Component Library",
+    languages: [
+      {
+        language: "TypeScript",
+        className: "typescript",
+      },
+      {
+        language: "React",
+        className: "react",
+      },
+      {
+        language: "TailwindCSS",
+        className: "tailwind",
+      },
+    ],
+    links: [
+      {
+        gitHub: "https://github.com/neelamkhan123/component-library",
+        website: "https://df22wszov2zdy.cloudfront.net",
+      },
+    ],
+    description: `A published React component library of 40 accessible components, built to the WAI-ARIA Authoring Practices Guide and shipped to npm as \`@neelamkhan21/ui\`, with hosted Storybook documentation and accessibility testing enforced in CI.
+
+### Key Features
+- **40 components** — from primitives (Button, Input, Checkbox) to composite widgets (Dialog, Combobox, Command palette, DataTable, Carousel, Calendar), each with its own Storybook stories and test suite.
+- **Accessibility as the design constraint** — every interactive component implements the WAI-ARIA APG pattern for its widget type: correct roles and ARIA relationships, full keyboard support, and managed focus.
+- **Native platform first** — Dialog is a real \`<dialog>\` driven by \`showModal()\`, so the focus trap, Escape-to-close, and top-layer stacking come from the browser rather than hand-rolled JavaScript; menus and popovers use the native Popover API.
+- **Automated a11y testing in CI** — every story is run against axe-core via the Storybook test runner, so an accessibility regression fails the build before it can merge.
+- **Reduced-motion support** — all transitions are dropped under \`prefers-reduced-motion\` (WCAG 2.3.3), including animations built to avoid non-animatable properties (open/close via a \`grid-template-rows\` 0fr↔1fr transition instead of \`height: auto\`).
+- **Documented decision log** — a \`DECISIONS.md\` recording the per-component accessibility reasoning: why a native element was or wasn't used, how hidden content is removed from the tab order and accessibility tree with \`inert\`, and what each ARIA relationship is doing.
+- **Published and consumable** — versioned on npm with dual ESM/CJS builds, generated TypeScript declarations, and MIT licensing including third-party notices for bundled dependencies.
+
+### Tech Stack
+
+**Library**
+- React 19 + TypeScript, authored as a headless-leaning component API
+- Tailwind CSS 4 for styling, \`class-variance-authority\` for variant-driven component props
+- \`lucide-react\` for iconography
+- Native browser primitives — \`<dialog>\`, the Popover API, and \`inert\` — in place of JavaScript reimplementations
+
+**Documentation**
+- Storybook 10 with the a11y addon, one story file per component
+- Static Storybook build deployed behind AWS CloudFront as the public documentation site
+
+**Testing**
+- Vitest + React Testing Library + \`jest-axe\` for unit and accessibility assertions (40 test files)
+- Storybook test runner with \`axe-playwright\` running axe-core over every story in a real browser
+
+**Build / Distribution**
+- \`tsup\` producing ESM + CJS bundles with TypeScript declaration files
+- Published to npm as a scoped public package with \`exports\` map and peer-dependency ranges for React
+- GitHub Actions CI running the unit suite, the package build, the Storybook build, and the full axe-core story sweep on every push and pull request
+
+### Skills Demonstrated
+Accessibility engineering to a published specification (WAI-ARIA APG), design-system and component API design, keyboard and focus management, automated accessibility testing, npm package authoring and distribution (bundling, type declarations, licensing/compliance), documentation-driven development with Storybook, and CI pipeline configuration.`,
+  },
+  {
     title: "Task Manager",
     languages: [
       {
