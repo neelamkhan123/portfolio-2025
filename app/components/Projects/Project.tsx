@@ -29,7 +29,7 @@ export default function Project({
       {/* Content */}
       <div
         className={`px-6 overflow-hidden transition-all duration-500 ease-in-out ${
-          isOpen ? "max-h-[1000px]" : "max-h-0"
+          isOpen ? "max-h-[2000px]" : "max-h-0"
         }`}
       >
         <div className="pt-5">
