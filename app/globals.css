@@ -84,6 +84,16 @@ body {
   color: white;
 }
 
+.kubernetes {
+  background-color: #326ce5;
+  color: white;
+}
+
+.postgresql {
+  background-color: #336791;
+  color: white;
+}
+
 .fastapi {
   background-color: rgb(65, 184, 131);
   color: white;

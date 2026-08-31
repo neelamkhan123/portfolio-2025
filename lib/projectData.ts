@@ -59,6 +59,79 @@ export const projectData: ProjectTemplate[] = [
 Accessibility engineering to a published specification (WAI-ARIA APG), design-system and component API design, keyboard and focus management, automated accessibility testing, npm package authoring and distribution (bundling, type declarations, licensing/compliance), documentation-driven development with Storybook, and CI pipeline configuration.`,
   },
   {
+    title: "OSS Health Dashboard",
+    languages: [
+      {
+        language: "TypeScript",
+        className: "typescript",
+      },
+      {
+        language: "React",
+        className: "react",
+      },
+      {
+        language: "Python",
+        className: "python",
+      },
+      {
+        language: "FastAPI",
+        className: "fastapi",
+      },
+      {
+        language: "PostgreSQL",
+        className: "postgresql",
+      },
+      {
+        language: "Kubernetes",
+        className: "kubernetes",
+      },
+      {
+        language: "TailwindCSS",
+        className: "tailwind",
+      },
+    ],
+    links: [
+      {
+        gitHub: "https://github.com/neelamkhan123/oss-health-dashboard",
+        website: "https://oss-dashboard.duckdns.org",
+      },
+    ],
+    description: `A full-stack dashboard that tracks the health of open-source repositories — syncing pull requests, issues, commits and contributors from the GitHub API on a schedule, then reporting how long PRs take to merge, whether the issue backlog is growing, and who is active. Built on my own published component library, and deployed to a real Kubernetes cluster.
+
+### Key Features
+- **Scheduled ingestion pipeline** — Celery beat triggers a sync every 15 minutes; a worker paginates the GitHub API across pull requests, issues, commits, contributors, reviews and issue comments, caching responses to stay well inside the rate limit.
+- **Measured performance work, not asserted** — every optimisation was benchmarked against ~1,000–1,800 PRs per repository and written up in \`PERFORMANCE.md\`, including the places where the expected win turned out not to exist.
+- **21x faster dashboard load** — Redis caching takes the landing request from 1,510ms to 71ms at p50, and from 6.5 to 136 requests/second under concurrency.
+- **53% smaller initial bundle** — route-level and chart-library code splitting cuts initial JavaScript from 782KB to 368KB, worth ~0.4s of LCP on a simulated mobile connection. Lighthouse scores 0.98 with a CLS of 0.
+- **Revocable sessions by design** — authentication uses opaque random tokens in Redis rather than JWTs, because a JWT is only as revocable as its expiry; sign-out is a single \`DEL\`. Sessions are httpOnly cookies, with GitHub and Google OAuth alongside email and password.
+- **Real Kubernetes, not a demo** — a k3s cluster running Postgres as a StatefulSet with a PersistentVolumeClaim, migrations as a one-off Job, readiness and liveness probes, rolling restarts, and horizontal pod autoscaling.
+- **Cost engineering as an explicit decision** — the managed-services design (RDS + ElastiCache + always-on compute) would have cost about $39/month. Moving the data tier into the cluster and the cluster onto an always-free host brought that to £0/month, with the reasoning and the trade-offs documented rather than hidden.
+
+### Tech Stack
+
+**Backend**
+- FastAPI + SQLAlchemy 2.0 with Alembic migrations, running on PostgreSQL
+- Celery worker and beat scheduler over Redis, which doubles as response cache and session store
+- Opaque-token session auth with bcrypt password hashing, per-user rate limiting, and GitHub/Google OAuth
+
+**Frontend**
+- React 19 + TypeScript + Vite, styled with Tailwind CSS 4
+- Built on \`@neelamkhan21/ui\`, my own published component library, consumed as a real npm dependency
+- Recharts for trend visualisation, lazy-loaded so it stays out of the initial bundle
+
+**Infrastructure**
+- Docker Compose for local development, driven by a Taskfile so setup is two commands
+- Kubernetes (k3s) in production: separate Deployments for API, worker and scheduler, nginx serving the SPA and proxying the API from one origin, and Caddy terminating TLS with automatically renewed certificates
+- Multi-architecture container images (arm64 + amd64) published to Docker Hub
+- Scripted, idempotent deployments to either an always-free ARM host or an on-demand cloud instance
+
+**CI**
+- GitHub Actions running the backend suite against live Postgres and Redis services, frontend lint, typecheck and build, and Lighthouse CI with asserted performance and accessibility budgets
+
+### Skills Demonstrated
+Backend API design and data modelling, background job scheduling and third-party API integration, query optimisation and cache strategy backed by benchmarks, authentication and session security, Kubernetes manifest authoring and cluster operation, infrastructure automation, CI pipeline configuration, and cost-aware architecture decisions with the trade-offs written down.`,
+  },
+  {
     title: "Task Manager",
     languages: [
       {
