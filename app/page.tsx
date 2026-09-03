@@ -1,20 +1,23 @@
-import Showcase from "./components/Home/Showcase";
-import AboutMe from "./components/Home/AboutMe";
-import Skills from "./components/Home/Skills";
-import WorkHistory from "./components/Home/WorkHistory";
-import Footer from "./components/Footer/Footer";
-import Projects from "./components/Home/Projects";
-import Contact from "./components/Home/Contact";
+import ScrollEffects from "./components/site/ScrollEffects";
+import TopNav from "./components/site/TopNav";
+import Hero from "./components/site/Hero";
+import WorkSection from "./components/site/WorkSection";
+import StackSection from "./components/site/StackSection";
+import ExperienceSection from "./components/site/ExperienceSection";
+import AboutSection from "./components/site/AboutSection";
+import ContactSection from "./components/site/ContactSection";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col items-center justify-center gap-8">
-      <Showcase />
-      <AboutMe />
-      <WorkHistory />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      <ScrollEffects />
+      <TopNav />
+      <Hero />
+      <WorkSection />
+      <StackSection />
+      <ExperienceSection />
+      <AboutSection />
+      <ContactSection />
+    </>
   );
 }

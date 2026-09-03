@@ -1,19 +1,30 @@
 import type { Metadata } from "next";
+import { Newsreader } from "next/font/google";
+import { profile } from "@/lib/content/profile";
 import "./globals.css";
 
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-serif",
+});
+
 export const metadata: Metadata = {
-  title: "Neelam Khan",
-  description: "This is Neelam Khan's personal portfolio site",
+  title: {
+    default: `${profile.name} — ${profile.role}`,
+    template: `%s — ${profile.name}`,
+  },
+  description: profile.summary,
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className="bg-slate-950 min-h-screen">{children}</body>
+    <html lang="en" className={newsreader.variable}>
+      <body>{children}</body>
     </html>
   );
 }
