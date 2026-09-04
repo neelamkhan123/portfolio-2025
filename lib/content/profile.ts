@@ -12,7 +12,7 @@ export const profile = {
     lead: "Neelam Khan, frontend",
     emphasis: "engineer",
     intro:
-      "I build performant, accessible web products in React and TypeScript, and the backends behind them in Python. Currently at the Tony Blair Institute for Global Change, where I own features end-to-end — from the Figma prototype to the pixel-level polish.",
+      "I build performant, accessible web products in React and TypeScript, and the backends behind them in Python.",
   },
 
   summary:
@@ -42,9 +42,8 @@ export const profile = {
 export type HeroStat = { value: string; label: string };
 
 export const heroStats: HeroStat[] = [
-  { value: "2.5", label: "Years shipping production" },
-  { value: "40", label: "Components published to npm" },
-  { value: "21×", label: "Faster after Redis caching" },
+  { value: "2.5+", label: "Years shipping production" },
+  { value: "40+", label: "Components published to npm" },
   { value: "London", label: "Based in, remote friendly" },
 ];
 
