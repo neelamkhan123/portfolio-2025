@@ -6,7 +6,7 @@ export type SkillGroup = {
 };
 
 export const stackIntro =
-  "I reach for the boring, well-documented thing first, and spend the saved time on accessibility and performance. Everything here has shipped in production or in one of the projects above.";
+  "I specialise in frontend development, with a strong focus on building accessible, performant, and maintainable user interfaces using TypeScript, React, and Tailwind. I also have experience with backend development, data management, and infrastructure, which allows me to create full-stack solutions when needed using Python, Django, and FastAPI. Aside from this, I continuously explore new technologies and best practices to enhance my skill set and deliver high-quality software solutions, which you can see in my github projects over the years.";
 
 export const skillGroups: SkillGroup[] = [
   {
@@ -27,7 +27,13 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Back end",
     tint: "p2",
-    items: ["Python", "Django", "Django REST Framework", "FastAPI", "REST APIs"],
+    items: [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "FastAPI",
+      "REST APIs",
+    ],
   },
   {
     title: "Data and infrastructure",
