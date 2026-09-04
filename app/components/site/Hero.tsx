@@ -18,23 +18,6 @@ export default function Hero() {
       />
 
       <div data-hero className="relative mx-auto w-full max-w-[1120px]">
-        <div
-          data-reveal
-          className="mb-9 inline-flex items-center gap-2 rounded-full py-[5px] pr-3 pl-2 text-xs font-medium"
-          style={{
-            background: "var(--surface)",
-            border: "1px solid var(--border-default)",
-            color: "var(--text-secondary)",
-          }}
-        >
-          <span
-            aria-hidden
-            className="ml-0.5 inline-block h-[7px] w-[7px] rounded-full"
-            style={{ background: "#5f8f6b" }}
-          />
-          {profile.availability}
-        </div>
-
         <h1
           data-reveal
           data-delay="80"
@@ -78,30 +61,23 @@ export default function Hero() {
           }}
         >
           {heroStats.map((stat) => (
-            <div key={stat.label} className="px-6 py-5" style={{ background: "var(--surface)" }}>
+            <div
+              key={stat.label}
+              className="px-6 py-5"
+              style={{ background: "var(--surface)" }}
+            >
               <dd className="serif tabular m-0 text-[30px] font-normal tracking-[-0.025em]">
                 {stat.value}
               </dd>
-              <dt className="mt-1 text-xs" style={{ color: "var(--text-muted)" }}>
+              <dt
+                className="mt-1 text-xs"
+                style={{ color: "var(--text-muted)" }}
+              >
                 {stat.label}
               </dt>
             </div>
           ))}
         </dl>
-      </div>
-
-      <div
-        aria-hidden
-        className="absolute bottom-9 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-[11px] tracking-[0.08em] max-lg:hidden"
-        style={{ color: "var(--text-placeholder)" }}
-      >
-        <span>Scroll</span>
-        <span
-          className="h-9 w-px"
-          style={{
-            background: "linear-gradient(to bottom, var(--border-strong), transparent)",
-          }}
-        />
       </div>
     </section>
   );

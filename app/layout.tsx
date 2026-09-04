@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import { Newsreader } from "next/font/google";
+import { Fraunces, Sora } from "next/font/google";
 import { profile } from "@/lib/content/profile";
 import "./globals.css";
 
-const newsreader = Newsreader({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
   style: ["normal", "italic"],
   display: "swap",
   variable: "--font-serif",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +28,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={newsreader.variable}>
+    <html lang="en" className={`${fraunces.variable} ${sora.variable}`}>
       <body>{children}</body>
     </html>
   );
