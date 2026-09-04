@@ -19,16 +19,14 @@ export const profile = {
     "Frontend engineer with 2+ years building performant, accessible web products. Skilled in React, TypeScript, JavaScript, Vue, and frontend component libraries, with a track record of shipping features that measurably improve engagement, load time, and conversion. Also builds backend services in Python with Django and FastAPI, enabling end-to-end ownership of features from architecture to pixel-level polish.",
 
   about: {
-    opener:
-      "I write frontend code for a living, and I care most about the part where an interface stops fighting the person using it — accessible by construction, fast on a bad connection, and honest about what it is doing.",
+    opener: "as a self taught developer",
     body: [
-      "I studied criminology at Goldsmiths and finished in 2023. Nothing in that degree was going to get me a frontend job, so I taught myself one: HTML, CSS and JavaScript first, then React and TypeScript, building projects until the gap between what I could read and what I could ship closed. That got me a three-month internship in February 2024, which needed Vue, Nuxt and Tailwind — none of which I knew. I learned them alongside the brief, delivered production-ready features independently, and converted to a full-time role in April.",
-      "The habit stuck. Everything under selected work was built outside working hours to answer a question the day job could not: what it actually takes to publish and version a package other people install, to run a real Kubernetes cluster, to prove a performance claim with a benchmark instead of asserting it. The write-ups record the decisions, including the optimisations that turned out not to help.",
+      "I taught myself to code while getting my degree when I decided to change direction for the millionth time. I taught myself the basics: HTML, CSS and JavaScript first, then React and TypeScript, building projects until the gap between what I could read and what I could ship closed. That got me a three-month internship which needed Vue, Nuxt and Tailwind, none of which I knew. I learned them alongside working my internship, delivered production-ready features independently, and converted to a full-time role.",
+      "The habit stuck. I basically have never stopped learning and building, constantly seeking out new challenges and opportunities to grow my skills. You can see the full journey of my development and skills in all my public projects on my GitHub.",
     ],
     facts: [
       { label: "Currently", value: "Frontend Engineer, TBI" },
       { label: "Based in", value: "London, UK" },
-      { label: "Latest project", value: "OSS health dashboard" },
     ],
   },
 
