@@ -33,13 +33,25 @@ export default function ExperienceSection() {
                 >
                   {role.company}
                 </div>
-                <p
-                  className="m-0 max-w-[62ch] text-[15px] leading-[1.65] text-pretty"
-                  style={{ color: "var(--text-secondary)" }}
-                >
-                  {role.summary}
-                </p>
-                <ul className="mt-4 flex list-none flex-wrap gap-2 p-0">
+                {/* The CV's own bullets, verbatim — the rule marker mirrors
+                    the one beside each index in Selected work. */}
+                <ul className="m-0 flex max-w-[62ch] list-none flex-col gap-2.5 p-0">
+                  {role.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="relative pl-5 text-[15px] leading-[1.65] text-pretty"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
+                      <span
+                        aria-hidden
+                        className="absolute top-[0.72em] left-0 h-px w-2.5"
+                        style={{ background: "var(--border-strong)" }}
+                      />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+                <ul className="mt-5 flex list-none flex-wrap gap-2 p-0">
                   {role.tech.slice(0, 6).map((tech) => (
                     <li key={tech} className="tag">
                       {tech}
