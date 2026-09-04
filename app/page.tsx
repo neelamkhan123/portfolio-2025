@@ -1,3 +1,4 @@
+import ScrollToTop from "./components/site/ScrollToTop";
 import ScrollEffects from "./components/site/ScrollEffects";
 import TopNav from "./components/site/TopNav";
 import Hero from "./components/site/Hero";
@@ -12,6 +13,7 @@ export default function HomePage() {
     <>
       <ScrollEffects />
       <TopNav />
+      <ScrollToTop />
       <Hero />
       <WorkSection />
       <StackSection />

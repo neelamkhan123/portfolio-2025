@@ -53,6 +53,7 @@ export default function ScrollEffects() {
       document.querySelector<HTMLElement>(`[data-navlink="${id}"]`),
     );
     const sections = NAV_SECTIONS.map((id) => document.getElementById(id));
+    const toTop = document.querySelector<HTMLElement>("[data-scrolltop]");
     let ticking = false;
 
     const pass = () => {
@@ -81,6 +82,13 @@ export default function ScrollEffects() {
         if (!link) return;
         link.dataset.active = String(i === active);
       });
+
+      if (toTop) {
+        const show = y > window.innerHeight * 0.75;
+        toTop.dataset.visible = String(show);
+        // Keep it out of the tab order while it is faded out.
+        toTop.inert = !show;
+      }
 
       if (motion) {
         document.querySelectorAll<HTMLElement>("[data-tilt]").forEach((el) => {
