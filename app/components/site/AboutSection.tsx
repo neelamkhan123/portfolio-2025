@@ -34,7 +34,7 @@ export default function AboutSection() {
       style={{ background: "var(--paper-deep)" }}
     >
       <div className="shell grid grid-cols-[0.85fr_1.15fr] items-start gap-20 max-lg:grid-cols-1 max-lg:gap-10">
-        <div data-reveal className="max-lg:max-w-sm">
+        <div data-reveal className="hidden lg:block max-lg:max-w-sm">
           <img
             src="/avatar.png"
             alt="Portrait of Neelam Khan"

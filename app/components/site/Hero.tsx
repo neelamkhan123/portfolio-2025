@@ -54,7 +54,7 @@ export default function Hero() {
         <dl
           data-reveal
           data-delay="320"
-          className="grid max-w-[840px] grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-px overflow-hidden rounded-xl"
+          className="flex flex-col sm:flex-row w-fit gap-px overflow-hidden rounded-xl"
           style={{
             background: "var(--border-default)",
             border: "1px solid var(--border-default)",
