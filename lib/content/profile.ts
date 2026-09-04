@@ -31,9 +31,9 @@ export const profile = {
   },
 
   contact: {
-    lead: "Tell me what you are",
-    emphasis: "building",
-    body: "Open to frontend and full-stack roles in London or remote. Email is the fastest route — a line about the team and the problem is plenty to start.",
+    lead: "Let's",
+    emphasis: "chat",
+    body: "Tell me what you are building and how I can contribute.",
   },
 } as const;
 
