@@ -19,7 +19,7 @@ export default function TopNav() {
       />
       <nav
         aria-label="Sections"
-        className="fixed top-5 left-1/2 z-50 flex w-max max-w-[calc(100vw-16px)] -translate-x-1/2 items-center gap-0.5 rounded-full p-[5px] backdrop-blur-md max-sm:top-3 max-sm:gap-0 max-sm:p-1"
+        className="fixed inset-x-0 top-5 z-50 mx-auto flex w-max max-w-[calc(100%-16px)] items-center gap-0.5 rounded-full p-[5px] backdrop-blur-md max-sm:top-3 max-sm:gap-0 max-sm:p-1"
         style={{
           background: "rgba(253,252,249,0.82)",
           border: "1px solid var(--border-default)",
