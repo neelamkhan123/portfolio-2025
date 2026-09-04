@@ -3,6 +3,9 @@ const LINKS = [
   { id: "stack", label: "Stack" },
   { id: "experience", label: "Experience" },
   { id: "about", label: "About" },
+  // Shortened below `sm`, where the full phrase costs more width than the
+  // other four links combined.
+  { id: "contact", label: "Get in touch", short: "Contact" },
 ];
 
 export default function TopNav() {
@@ -16,7 +19,7 @@ export default function TopNav() {
       />
       <nav
         aria-label="Sections"
-        className="fixed top-5 left-1/2 z-50 flex -translate-x-1/2 items-center gap-0.5 rounded-full p-[5px] backdrop-blur-md max-sm:gap-0 max-sm:p-1"
+        className="fixed top-5 left-1/2 z-50 flex w-max max-w-[calc(100vw-16px)] -translate-x-1/2 items-center gap-0.5 rounded-full p-[5px] backdrop-blur-md max-sm:top-3 max-sm:gap-0 max-sm:p-1"
         style={{
           background: "rgba(253,252,249,0.82)",
           border: "1px solid var(--border-default)",
@@ -29,22 +32,18 @@ export default function TopNav() {
             key={link.id}
             href={`#${link.id}`}
             data-navlink={link.id}
-            className="rounded-full px-3.5 py-[7px] text-[13px] font-medium tracking-[0.01em] transition-colors max-sm:px-2.5 max-sm:text-xs"
-            style={{ color: "var(--text-muted)" }}
+            className="nav-link rounded-full px-3.5 py-[7px] text-[13px] font-medium tracking-[0.01em] whitespace-nowrap max-sm:px-2 max-sm:py-1.5 max-sm:text-xs"
           >
-            {link.label}
+            {link.short ? (
+              <>
+                <span className="max-sm:hidden">{link.label}</span>
+                <span className="sm:hidden">{link.short}</span>
+              </>
+            ) : (
+              link.label
+            )}
           </a>
         ))}
-        <a
-          href="#contact"
-          className="ml-1 rounded-full px-4 py-[7px] text-[13px] font-medium tracking-[0.01em] transition-colors max-sm:px-3 max-sm:text-xs"
-          style={{
-            color: "var(--action-solid-fg)",
-            background: "var(--action-solid-bg)",
-          }}
-        >
-          Get in touch
-        </a>
       </nav>
     </>
   );

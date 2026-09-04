@@ -121,6 +121,34 @@ a {
   margin: 0;
 }
 
+/* Top nav -------------------------------------------------------------- */
+
+.nav-link {
+  color: var(--text-muted);
+  background: transparent;
+  transition: color 150ms ease, background 150ms ease;
+}
+
+.nav-link[data-active="true"] {
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+}
+
+/*
+  Hover only where a pointer can actually hover. On touch, `:hover` sticks
+  after a tap, leaving a stale pill on whichever link was last used.
+*/
+@media (hover: hover) and (pointer: fine) {
+  .nav-link:hover {
+    color: var(--text-primary);
+    background: var(--surface-muted);
+  }
+
+  .nav-link[data-active="true"]:hover {
+    background: color-mix(in oklab, var(--accent-soft) 82%, var(--accent));
+  }
+}
+
 /* Buttons -------------------------------------------------------------- */
 
 .btn {

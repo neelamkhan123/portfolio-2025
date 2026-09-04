@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen items-center px-8 pt-30 pb-20 max-sm:px-5"
+      className="relative flex min-h-screen items-center overflow-hidden px-8 pt-30 pb-20 max-sm:px-5"
     >
       <div
         aria-hidden

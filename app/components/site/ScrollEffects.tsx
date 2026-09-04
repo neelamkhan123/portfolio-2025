@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const NAV_SECTIONS = ["work", "stack", "experience", "about"];
+const NAV_SECTIONS = ["work", "stack", "experience", "about", "contact"];
 
 /**
  * Port of the design's scroll behaviour: reveal-on-enter, a top progress bar,
@@ -11,7 +11,9 @@ const NAV_SECTIONS = ["work", "stack", "experience", "about"];
  */
 export default function ScrollEffects() {
   useEffect(() => {
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     const motion = !reduced;
 
     if (motion) document.body.classList.add("motion-on");
@@ -68,20 +70,24 @@ export default function ScrollEffects() {
 
       let active = -1;
       sections.forEach((section, i) => {
-        if (section && section.getBoundingClientRect().top <= window.innerHeight * 0.4) {
+        if (
+          section &&
+          section.getBoundingClientRect().top <= window.innerHeight * 0.4
+        ) {
           active = i;
         }
       });
       links.forEach((link, i) => {
         if (!link) return;
-        link.style.color = i === active ? "var(--text-primary)" : "var(--text-muted)";
-        link.style.background = i === active ? "var(--action-soft-bg)" : "transparent";
+        link.dataset.active = String(i === active);
       });
 
       if (motion) {
         document.querySelectorAll<HTMLElement>("[data-tilt]").forEach((el) => {
           const r = el.getBoundingClientRect();
-          const c = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight;
+          const c =
+            (r.top + r.height / 2 - window.innerHeight / 2) /
+            window.innerHeight;
           el.style.transform = `scale(${1 - Math.min(0.035, Math.abs(c) * 0.06)})`;
         });
       }
