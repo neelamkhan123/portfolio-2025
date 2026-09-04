@@ -1,122 +1,287 @@
 @import "tailwindcss";
 
+/*
+  Editorial paper theme.
+
+  Values are lifted from the Claude Design source. The accent is the one
+  deliberate departure: the design ships Clay (a terracotta) as its default,
+  swapped here for Blush per the standing preference for pink over orange.
+  The other presets are kept — set `data-accent` on <body> to switch.
+*/
+:root {
+  --paper: #f4f1ea;
+  --paper-deep: #eae5db;
+  --surface: #fdfcf9;
+  --surface-muted: #efebe2;
+  --surface-subtle: #e9e4d9;
+
+  --text-primary: #1d1b17;
+  --text-secondary: #57534a;
+  --text-muted: #7d776b;
+  --text-placeholder: #a8a294;
+
+  --border-default: #e0dacd;
+  --border-strong: #cec7b6;
+
+  --action-solid-bg: #1d1b17;
+  --action-solid-fg: #fdfcf9;
+  --action-solid-bg-hover: #3a352c;
+  --action-soft-bg: #eae5db;
+  --action-ghost-bg-hover: #eae5db;
+
+  /* Blush — the pink standing in for the design's Clay. */
+  --accent: #c47d95;
+  --accent-soft: #f1d9e1;
+  --accent-ink: #8a3f5a;
+
+  --sec-pad: 140px;
+
+  /* Per-project tints, used for figure grounds and stack pills. */
+  --p1: #f0dfd6;
+  --p1-ink: #8a4d31;
+  --p2: #dde5da;
+  --p2-ink: #4a6350;
+  --p3: #dbe2ee;
+  --p3-ink: #42597c;
+}
+
+[data-accent="clay"] {
+  --accent: #c98a6b;
+  --accent-soft: #f1ddd1;
+  --accent-ink: #8a4d31;
+}
+[data-accent="sage"] {
+  --accent: #7fa287;
+  --accent-soft: #dfe8de;
+  --accent-ink: #416349;
+}
+[data-accent="sky"] {
+  --accent: #7c9cc4;
+  --accent-soft: #dbe4f0;
+  --accent-ink: #3f5c86;
+}
+[data-accent="lilac"] {
+  --accent: #a290c4;
+  --accent-soft: #e5dff0;
+  --accent-ink: #5c4a85;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Roboto Mono", monospace;
-  background-color: #020618;
+  margin: 0;
+  background: var(--paper);
+  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-.slide-up {
-  animation: slide-up-anim 0.8s ease-in;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.html {
-  background-color: rgb(227, 76, 38);
-  color: white;
+::selection {
+  background: var(--accent-soft);
 }
 
-.css {
-  background-color: rgb(38, 77, 228);
-  color: white;
+.serif {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
 }
 
-.tailwind {
-  background-color: rgb(113, 196, 245);
-  color: white;
+.tabular {
+  font-variant-numeric: tabular-nums;
 }
 
-.sass {
-  background-color: rgb(204, 102, 153);
-  color: white;
+/* Section rhythm ------------------------------------------------------- */
+
+.section {
+  padding: var(--sec-pad) 32px;
 }
 
-.javascript {
-  background-color: rgb(240, 219, 79);
-  color: white;
+.shell {
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
-.typescript {
-  background-color: rgb(0, 122, 204);
-  color: white;
+.section-head {
+  margin-bottom: 72px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-default);
 }
 
-.react {
-  background-color: rgb(136, 221, 237);
-  color: white;
+.section-title {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  font-weight: 300;
+  font-size: clamp(32px, 4vw, 52px);
+  letter-spacing: -0.03em;
+  margin: 0;
 }
 
-.vue {
-  background-color: rgb(65, 184, 131);
-  color: white;
+/* Top nav -------------------------------------------------------------- */
+
+.nav-link {
+  color: var(--text-muted);
+  background: transparent;
+  transition: color 150ms ease, background 150ms ease;
 }
 
-.mysql {
-  background-color: rgb(0, 117, 143);
-  color: white;
+.nav-link[data-active="true"] {
+  color: var(--accent-ink);
+  background: var(--accent-soft);
 }
 
-.php {
-  background-color: rgb(137, 147, 190);
-  color: white;
-}
-
-.laravel {
-  background-color: rgb(240, 83, 64);
-  color: white;
-}
-
-.nuxt {
-  background-color: rgb(65, 184, 131);
-  color: white;
-}
-
-.next {
-  background-color: rgb(0, 0, 0);
-  color: white;
-}
-
-.python {
-  background-color: #ffe873;
-  color: white;
-}
-
-.django {
-  background-color: rgb(6, 75, 53);
-  color: white;
-}
-
-.kubernetes {
-  background-color: #326ce5;
-  color: white;
-}
-
-.postgresql {
-  background-color: #336791;
-  color: white;
-}
-
-.fastapi {
-  background-color: rgb(65, 184, 131);
-  color: white;
-}
-
-.figma {
-  background-color: rgb(255, 114, 98);
-  color: white;
-}
-
-@keyframes slide-up-anim {
-  0% {
-    transform: translateY(5px);
-    opacity: 0;
+/*
+  Hover only where a pointer can actually hover. On touch, `:hover` sticks
+  after a tap, leaving a stale pill on whichever link was last used.
+*/
+@media (hover: hover) and (pointer: fine) {
+  .nav-link:hover {
+    color: var(--text-primary);
+    background: var(--surface-muted);
   }
 
-  50% {
-    transform: translateY(-5px);
-    opacity: 0.8;
+  .nav-link[data-active="true"]:hover {
+    background: color-mix(in oklab, var(--accent-soft) 82%, var(--accent));
   }
+}
 
-  100% {
-    transform: translateY(0px);
+/* Back-to-top ---------------------------------------------------------- */
+
+.to-top {
+  color: var(--text-secondary);
+  background: rgba(253, 252, 249, 0.82);
+  border: 1px solid var(--border-default);
+  box-shadow:
+    0 8px 24px rgba(29, 27, 23, 0.06),
+    0 1px 0 rgba(29, 27, 23, 0.04);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    color 150ms ease,
+    background 150ms ease;
+}
+
+.to-top[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .to-top:hover {
+    color: var(--text-primary);
+    background: var(--surface-muted);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .to-top {
+    transform: none;
+    transition: opacity 200ms ease;
+  }
+}
+
+/* Buttons -------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 150ms ease;
+}
+
+.btn-solid {
+  background: var(--action-solid-bg);
+  color: var(--action-solid-fg);
+}
+.btn-solid:hover {
+  background: var(--action-solid-bg-hover);
+}
+
+.btn-quiet {
+  background: var(--surface);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+}
+.btn-quiet:hover {
+  background: var(--surface-muted);
+}
+
+/* Pills ---------------------------------------------------------------- */
+
+.tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: var(--surface);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+}
+
+.tag-tinted {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 5px 11px;
+  border-radius: 9999px;
+}
+
+/* Scroll-reveal -------------------------------------------------------- */
+
+[data-reveal] {
+  opacity: 1;
+}
+
+.motion-on [data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition-property: opacity, transform;
+  transition-duration: 820ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.motion-on [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  .motion-on [data-reveal] {
     opacity: 1;
+    transform: none;
+  }
+}
+
+/* Narrow screens: the design is authored at desktop width. ------------- */
+
+@media (max-width: 900px) {
+  :root {
+    --sec-pad: 88px;
+  }
+  .section {
+    padding: var(--sec-pad) 20px;
   }
 }

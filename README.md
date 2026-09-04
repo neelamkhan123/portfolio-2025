@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# portfolio-2025
 
-## Getting Started
+Personal portfolio for Neelam Khan — Next.js App Router, Tailwind CSS v4, and a
+warm editorial theme ported from Claude Design.
 
-First, run the development server:
-
-```bash
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+app/
+  layout.tsx                 Newsreader serif + globals
+  page.tsx                   the one-page site, composed of sections
+  projects/[slug]/           case study per project
+  components/site/
+    ScrollEffects.tsx        reveal, progress bar, nav spy, tilt (client)
+    TopNav.tsx  Hero.tsx  WorkSection.tsx  StackSection.tsx
+    ExperienceSection.tsx  AboutSection.tsx  ContactSection.tsx
+    Figure.tsx               image slot, with a tinted fallback
+lib/content/                 all copy, as typed data
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy lives in `lib/content/` rather than in components, so editing the site is
+editing data.
 
-## Learn More
+## Component library
 
-To learn more about Next.js, take a look at the following resources:
+This layout is bespoke and does not currently use `neelam-ui`. The package is
+still a dependency so it can be reintroduced (the tag pills and case-study
+sections are the natural fit); Tailwind no longer scans it, which keeps ~33KB
+of unused utility classes out of the CSS.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Theming
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The palette is a set of CSS custom properties in `app/globals.css`, matching the
+design's values. The accent ships as **Blush** (pink); the design's original
+Clay, plus Sage, Sky and Lilac, are kept as presets — switch with a
+`data-accent` attribute on `<body>`:
 
-## Deploy on Vercel
+```html
+<body data-accent="clay">
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project images
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+`Figure` renders a tinted placeholder until you give it a `src`. Drop
+screenshots into `public/` and pass the path to swap them in.
