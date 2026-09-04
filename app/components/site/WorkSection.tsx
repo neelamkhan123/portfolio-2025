@@ -91,8 +91,11 @@ export default function WorkSection() {
                   <Figure
                     tilt
                     tint={project.tint}
+                    ratio={project.imageHeader ? "16/9" : "4/3"}
                     index={index}
                     caption={project.title}
+                    src={project.imageHeader}
+                    alt={`${project.title} screenshot`}
                   />
                 </div>
               </article>
